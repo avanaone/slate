@@ -48,11 +48,11 @@ html, body {
 
 @mixin embossed-bg {
   background:
-    linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0) 8px),
-    linear-gradient(to top, rgba(#000, 0.2), rgba(#000, 0) 8px),
-    linear-gradient(to bottom, rgba($nav-embossed-border-top, 1), rgba($nav-embossed-border-top, 0) 1.5px),
-    linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px),
-    $nav-subitem-bg;
+  linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0) 8px),
+  linear-gradient(to top, rgba(#000, 0.2), rgba(#000, 0) 8px),
+  linear-gradient(to bottom, rgba($nav-embossed-border-top, 1), rgba($nav-embossed-border-top, 0) 1.5px),
+  linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px),
+  $nav-subitem-bg;
 }
 
 .tocify-wrapper {
@@ -82,7 +82,9 @@ html, body {
   // This is the logo at the top of the ToC
   &>img {
     display: block;
-    max-width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
   }
 
   &>.search {
@@ -391,7 +393,7 @@ html, body {
   h3, h4, h5, h6 {
     @extend %header-font;
     font-size: 15px;
-    margin-top: 2.5em;
+    margin-top: 0.5em;
     margin-bottom: 0.8em;
   }
 
