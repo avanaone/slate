@@ -145,7 +145,7 @@
 
 <p>Some fancy intro</p>
 
-<p>For testing purpose, please use <code class="prettyprint">http://apis.sandbox.dev.avana.asia/</code></p>
+<p>For testing purpose, please use <code class="prettyprint">http://apis.sandbox.avana.asia/</code></p>
 
 <h3 id="response">Response</h3>
 
@@ -156,13 +156,13 @@
 <blockquote>
 <p>To authenticate using <code class="prettyprint">client_credentials</code> grant, use the following:</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET  <span class="s2">"https://resource.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span>
+<pre class="highlight shell"><code>curl -X GET  <span class="s2">"https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"hostname"</span><span class="p">:</span> <span class="s2">"https://resource.avana.asia"</span><span class="p">,</span>
+  <span class="s2">"hostname"</span><span class="p">:</span> <span class="s2">"https://apis.avana.asia"</span><span class="p">,</span>
   <span class="s2">"port"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"/v1/oauth/access_token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span>
 <span class="p">};</span>

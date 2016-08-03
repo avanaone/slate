@@ -3,14 +3,14 @@
 > To authenticate using `client_credentials` grant, use the following:
 
 ```shell
-curl -X GET  "https://resource.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
+curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
 ```
 ```javascript
 var http = require("http");
 
 var options = {
   "method": "GET",
-  "hostname": "https://resource.avana.asia",
+  "hostname": "https://apis.avana.asia",
   "port": null,
   "path": "/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
 };

@@ -22,7 +22,7 @@
 ```
 Some fancy intro
 
-For testing purpose, please use `http://apis.sandbox.dev.avana.asia/`
+For testing purpose, please use `http://apis.sandbox.avana.asia/`
 
 ### Response
 All response from the API is enveloped in a common envelope
