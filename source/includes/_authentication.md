@@ -6,29 +6,7 @@
 curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
 ```
 ```javascript
-var http = require("http");
-
-var options = {
-  "method": "GET",
-  "hostname": "https://apis.avana.asia",
-  "port": null,
-  "path": "/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
-};
-
-var req = http.request(options, function (res) {
-  var chunks = [];
-
-  res.on("data", function (chunk) {
-    chunks.push(chunk);
-  });
-
-  res.on("end", function () {
-    var body = Buffer.concat(chunks);
-    console.log(body.toString());
-  });
-});
-
-req.end();
+//to be added
 ```
 
 ```php
@@ -51,7 +29,7 @@ req.end();
 //to be added
 ```
 
-> All successful authorization response will look like the following
+> A successfull response will look like the following
 
 ```json
 {
@@ -62,7 +40,7 @@ req.end();
     }
 }
 ```
-AVANA uses OAuth2 to allow access to the API and supports the following grants:
+**AVANA** uses OAuth2 to allow access to the API and supports the following grants:
 
  - Client Credentials (Trusted Third Party Platform)
  - Authorization Code 
@@ -77,9 +55,9 @@ Plese refer to RFC6749 [Section-4.4](https://tools.ietf.org/html/rfc6749#section
 
 Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section-4.1)
 
-AVANA expects for the access_token to be included in all API requests to the server in a header that looks like the following:
+**AVANA** expects for the access_token to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization : Bearer:access_token`
+`Authorization : Bearer access_token`
 
 <aside class="notice">
 You must replace <code>access_token</code> with your access token recieved upon authorization.

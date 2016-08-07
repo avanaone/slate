@@ -158,29 +158,7 @@
 </blockquote>
 <pre class="highlight shell"><code>curl -X GET  <span class="s2">"https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"hostname"</span><span class="p">:</span> <span class="s2">"https://apis.avana.asia"</span><span class="p">,</span>
-  <span class="s2">"port"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"/v1/oauth/access_token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span>
-<span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">chunks</span> <span class="o">=</span> <span class="p">[];</span>
-
-  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">chunks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"end"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">chunks</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">req</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<pre class="highlight javascript"><code><span class="c1">//to be added</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="c1">//to be added
@@ -199,7 +177,7 @@
 </span></code></pre>
 
 <blockquote>
-<p>All successful authorization response will look like the following</p>
+<p>A successfull response will look like the following</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -210,7 +188,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>AVANA uses OAuth2 to allow access to the API and supports the following grants:</p>
+<p><strong>AVANA</strong> uses OAuth2 to allow access to the API and supports the following grants:</p>
 
 <ul>
 <li>Client Credentials (Trusted Third Party Platform)</li>
@@ -227,9 +205,9 @@
 
 <p>Plese refer to RFC6749 <a href="https://tools.ietf.org/html/rfc6749#section-4.1">Section-4.1</a></p>
 
-<p>AVANA expects for the access_token to be included in all API requests to the server in a header that looks like the following:</p>
+<p><strong>AVANA</strong> expects for the access_token to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization : Bearer:access_token</code></p>
+<p><code class="prettyprint">Authorization : Bearer access_token</code></p>
 
 <aside class="notice">
 You must replace <code>access_token</code> with your access token recieved upon authorization.
@@ -238,6 +216,153 @@ You must replace <code>access_token</code> with your access token recieved upon 
 <aside class="notice">
 Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
 </aside>
+
+          <h1 id="third-party-integration">Third Party Integration</h1>
+
+<p>In order for a third party to push product to <strong>AVANA</strong> platform, they will have to have the shop&rsquo;s valid <strong><em>INTEGRATION_KEY</em></strong>, <strong>AVANA</strong> user must be able to add the <strong><em>INTEGRATION_KEY</em></strong> on third party&rsquo;s platform.</p>
+
+<h2 id="validating-integration-key">Validating Integration Key</h2>
+
+<blockquote>
+<p>To validate <code class="prettyprint">INTEGRATION_KEY</code>, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST  <span class="s2">"https://apis.avana.asia/v1/vendor/vendor?integration_key=INTEGRATION_KEY -H "</span>Authorization: Bearer access_token<span class="s2">"
+</span></code></pre>
+<pre class="highlight javascript"><code><span class="c1">//to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"secure_key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"SECURE_KEY"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"validity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A failed response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No shop is associated with this key: INTEGRATION_KEY"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>All <strong><em>INTEGRATION_KEY</em></strong> that is being added must be validated against <strong>AVANA</strong> to make sure the <strong><em>INTEGRATION_KEY</em></strong> is a valid key. Upon successful validation, AVANA will respond with a <code class="prettyprint">shop_id</code> and <code class="prettyprint">SECURE_KEY</code>. This <code class="prettyprint">shop_id</code> can be used to keep track of activities that involes <strong>AVANA</strong>.</p>
+
+<p>In order to push product to <strong>AVANA</strong>, the push product request must be accompined with the received <code class="prettyprint">SECURE_KEY</code> in <code class="prettyprint">Avana-Secure-Key</code> header.</p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">integration_key</code></td>
+<td><code class="prettyprint">INTEGRATION_KEY</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+          <h1 id="product">Product</h1>
+
+<h2 id="adding-product">Adding Product</h2>
+
+<blockquote>
+<p>To add product, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Avana-Secure-Key: secure_key"</span> -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span> -H <span class="s2">"Authorization: Bearer access_token"</span>
+-d <span class="s1">'{
+    "name": "Product name",
+    "model": "Product model",
+    "category": "Product Category",
+    "option": {
+        "name": "Size",
+        "for": "Shirt",
+        "variation" : ["s","m","l"],
+        "quantity": {
+            "s" : 10,
+            "m" : 10,
+            "l" : 10
+        }
+    },
+    "quantity": 10,
+    "price": 12,
+    "description": "Product description",
+    "weight":{
+        "value" : 1,
+        "unit": "kg"
+    },
+    "primary_image": "http://example.org/images/image_1.png",
+    "images": ["http://example.org/images/image_2.png"],
+    "EDT": "1-2 Days",
+    "label" : ["label_1", "label_2", "label_3"],
+    "tax" : {
+        "value": 6,
+        "name": "GST"
+    },
+    "published": true
+}'</span> <span class="s2">"https://apis.avana.asia/v1/vendor/product"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>A failed response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adding product failed"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
       </div>
       <div class="dark-box">

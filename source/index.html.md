@@ -13,6 +13,8 @@ toc_footers:
 includes:
   - introduction
   - authentication
+  - integration
+  - product
 
 search: true
 ---
