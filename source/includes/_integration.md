@@ -9,7 +9,7 @@ In order for a third party to push product to **AVANA** platform, they will have
 > To validate `INTEGRATION_KEY`, use the following:
 
 ```shell
-curl -X POST  "https://apis.avana.asia/v1/vendor/vendor?integration_key=INTEGRATION_KEY -H "Authorization: Bearer access_token"
+curl -X POST  "https://apis.avana.asia/v1/vendor/integrate?integration_key=INTEGRATION_KEY -H "Authorization: Bearer access_token"
 ```
 ```javascript
 //to be added
