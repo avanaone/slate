@@ -1,6 +1,6 @@
+# Third Party
 # Product
-
-## Adding Product
+## Add Product
 
 > To add product, use the following:
 
@@ -70,4 +70,4 @@ curl -X POST -H "Avana-Secure-Key: secure_key" -H "Content-Type: application/jso
 }
 ```
 
-
+## Edit Product

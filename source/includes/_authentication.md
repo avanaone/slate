@@ -3,7 +3,9 @@
 > To authenticate using `client_credentials` grant, use the following:
 
 ```shell
-curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials"
+curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?\
+client_id=CLIENT_ID&client_secret=CLIENT_SECRET&\
+grant_type=client_credentials"
 ```
 ```javascript
 //to be added
@@ -29,21 +31,29 @@ curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?client_id=CLIENT_ID&
 //to be added
 ```
 
-> A successfull response will look like the following
 
-```json
-{
-    "data" : {
-	    "access_token": "access_token_string",
-	    "token_type": "Bearer",
-	    "expires_in": 5184000
-    }
-}
+> To authenticate using `password` grant, use the following following
+
+```shell
+curl -X GET "https://apis.avana.asia/v1/oauth/access_token?\
+client_id=CLIENT_ID&client_secret=CLIENT_SECRET&\
+grant_type=password&username=USERNAME&password=PASSWORD"
 ```
+```javascript
+// to be added
+```
+
+```php
+<?php
+
+//to be added
+```
+
 **AVANA** uses OAuth2 to allow access to the API and supports the following grants:
 
  - Client Credentials (Trusted Third Party Platform)
  - Authorization Code 
+ - Resource Owner Password Credentials
 
 ### Authentication Flow
 
@@ -55,6 +65,10 @@ Plese refer to RFC6749 [Section-4.4](https://tools.ietf.org/html/rfc6749#section
 
 Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section-4.1)
 
+#### Resource Owner Password Credentials
+
+Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section-4.3)
+
 **AVANA** expects for the access_token to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization : Bearer access_token`
@@ -64,4 +78,7 @@ You must replace <code>access_token</code> with your access token recieved upon 
 </aside>
 <aside class="notice">
 Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
+</aside>
+<aside class="notice">
+Replace <code>USERNAME</code> and <code>PASSWORD</code> with the one entered by the user
 </aside>
