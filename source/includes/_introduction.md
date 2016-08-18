@@ -1,6 +1,6 @@
 # Introduction
 
-> Success Response
+> Success Response (Single resource)
 
 ```
 {
@@ -9,6 +9,23 @@
     }
 }
 ```
+
+
+> Success Response (Multiple resource)
+
+```
+{
+    "data" : [
+        {
+            "key" : "value"
+        },
+        {
+            "key" : "value"
+        }
+    ]
+}
+```
+
 
 > Error Response
 
