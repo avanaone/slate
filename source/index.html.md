@@ -15,6 +15,8 @@ includes:
   - authentication
   - integration
   - product
+  - mobile
+  - shop
 
 search: true
 ---

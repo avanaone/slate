@@ -1,4 +1,5 @@
-# Third Party Integration
+# Third Party API
+# Integration
 
 In order for a third party to push product to **AVANA** platform, they will have to have the shop's valid ***INTEGRATION_KEY***, **AVANA** user must be able to add the ***INTEGRATION_KEY*** on third party's platform.
 
