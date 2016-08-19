@@ -17,6 +17,7 @@ includes:
   - product
   - mobile
   - shop
+  - order
 
 search: true
 ---

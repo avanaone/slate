@@ -577,6 +577,116 @@ You must replace <code>access_token</code> with your access token recieved upon 
 You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
+          <h1 id="order">Order</h1>
+
+<h2 id="order-list">Order List</h2>
+
+<blockquote>
+<p>To get the order list for a shop, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/shop/{shop_id}/order"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+
+<p>With data</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processing"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Name"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-18 12:07:53"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processing"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Another Customer Name"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-18 11:07:53"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Without data</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Retrive the order list for a shop</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/shop/{shop_id}/order</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">status</code></td>
+<td><code class="prettyprint">Processing</code> ,<code class="prettyprint">Shipped</code> ,<code class="prettyprint">Refunded</code> ,<code class="prettyprint">Pending</code> ,<code class="prettyprint">Paid</code> ,<code class="prettyprint">Cancelled</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
