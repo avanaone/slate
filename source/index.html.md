@@ -18,6 +18,7 @@ includes:
   - mobile
   - shop
   - order
+  - tax
 
 search: true
 ---
