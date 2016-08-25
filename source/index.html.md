@@ -19,6 +19,7 @@ includes:
   - shop
   - order
   - tax
+  - label
 
 search: true
 ---
