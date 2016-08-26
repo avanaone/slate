@@ -1762,6 +1762,468 @@ You must replace <code>access_token</code> with your access token recieved upon 
     You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
+          <h1 id="category">Category</h1>
+
+<h2 id="category-list">Category List</h2>
+
+<blockquote>
+<p>To get the category list for a shop, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/{shop_id}/category"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baby Hat"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baby Shirt"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Retrive the category for a shop</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/{shop_id}/category</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">GET</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<p>none</p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<h2 id="category-info">Category Info</h2>
+
+<blockquote>
+<p>To get a category info, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/category/{category_id}"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baby Hat"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Retrive info for a category</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/category/{category_id}</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">GET</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<p>none</p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+<tr>
+<td>404</td>
+<td>Category not found</td>
+<td>No category found for the specified category_id</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<h2 id="create-category">Create Category</h2>
+
+<blockquote>
+<p>To create a category, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/{shop_id}/category"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baby Hat"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Create a category for a shop</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/{shop_id}/category</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">POST</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>category name</td>
+</tr>
+</tbody></table>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<h2 id="update-category">Update Category</h2>
+
+<blockquote>
+<p>To update a category, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X PATCH -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/category/{category_id}"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baby Hat Updated"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Update info for a category</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/category/{category_id}</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">PATCH</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>Category name</td>
+</tr>
+</tbody></table>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>category_id does not belong to current user</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Input cannot be empty, accepted input: {valid_inputs}</td>
+<td>Request cannot be empty, needs atleast one input</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Invalid input({invalid_inputs}), accepted input: {valid_inputs}</td>
+<td>Request needs a valid input</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<h2 id="delete-category">Delete Category</h2>
+
+<blockquote>
+<p>To delete a category, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/category/{category_id}"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Delete a category</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/category/{category_id}</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">DELETE</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<p>none</p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+<tr>
+<td>404</td>
+<td>Category not found</td>
+<td>No category found for the specified category_id</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">

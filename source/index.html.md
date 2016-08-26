@@ -20,6 +20,7 @@ includes:
   - order
   - tax
   - label
+  - category
 
 search: true
 ---
