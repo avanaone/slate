@@ -3,9 +3,10 @@
 > To authenticate using `client_credentials` grant, use the following:
 
 ```shell
-curl -X GET  "https://apis.avana.asia/v1/oauth/access_token?\
-client_id=CLIENT_ID&client_secret=CLIENT_SECRET&\
-grant_type=client_credentials"
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded"\
+-d 'grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET'\
+"https://apis.avana.asia/v1/oauth/access_token"
+
 ```
 ```javascript
 //to be added
@@ -35,9 +36,9 @@ grant_type=client_credentials"
 > To authenticate using `password` grant, use the following following
 
 ```shell
-curl -X GET "https://apis.avana.asia/v1/oauth/access_token?\
-client_id=CLIENT_ID&client_secret=CLIENT_SECRET&\
-grant_type=password&username=USERNAME&password=PASSWORD"
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded"\
+-d 'grant_type=password&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&username=USERNAME&password=PASSWORD' \
+"https://apis.avana.asia/v1/oauth/access_token"
 ```
 ```javascript
 // to be added
@@ -51,9 +52,9 @@ grant_type=password&username=USERNAME&password=PASSWORD"
 
 **AVANA** uses OAuth2 to allow access to the API and supports the following grants:
 
- - Client Credentials (Trusted Third Party Platform)
- - Authorization Code 
- - Resource Owner Password Credentials
+- Client Credentials (Trusted Third Party Platform)
+- Authorization Code 
+- Resource Owner Password Credentials
 
 ### Authentication Flow
 
@@ -74,11 +75,11 @@ Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section
 `Authorization : Bearer access_token`
 
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 <aside class="notice">
-Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
+    Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
 </aside>
 <aside class="notice">
-Replace <code>USERNAME</code> and <code>PASSWORD</code> with the one entered by the user
+    Replace <code>USERNAME</code> and <code>PASSWORD</code> with the one entered by the user
 </aside>

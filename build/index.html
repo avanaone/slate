@@ -171,9 +171,10 @@
 <blockquote>
 <p>To authenticate using <code class="prettyprint">client_credentials</code> grant, use the following:</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET  <span class="s2">"https://apis.avana.asia/v1/oauth/access_token?</span><span class="se">\</span><span class="s2">
-client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;</span><span class="se">\</span><span class="s2">
-grant_type=client_credentials"</span>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+-d <span class="s1">'grant_type=client_credentials&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET'</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/oauth/access_token"</span>
+
 </code></pre>
 <pre class="highlight javascript"><code><span class="c1">//to be added</span>
 </code></pre>
@@ -196,9 +197,9 @@ grant_type=client_credentials"</span>
 <blockquote>
 <p>To authenticate using <code class="prettyprint">password</code> grant, use the following following</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"https://apis.avana.asia/v1/oauth/access_token?</span><span class="se">\</span><span class="s2">
-client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;</span><span class="se">\</span><span class="s2">
-grant_type=password&amp;username=USERNAME&amp;password=PASSWORD"</span>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="se">\</span>
+-d <span class="s1">'grant_type=password&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;username=USERNAME&amp;password=PASSWORD'</span> <span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/oauth/access_token"</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="c1">// to be added</span>
 </code></pre>
@@ -234,15 +235,15 @@ grant_type=password&amp;username=USERNAME&amp;password=PASSWORD"</span>
 <p><code class="prettyprint">Authorization : Bearer access_token</code></p>
 
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
 <aside class="notice">
-Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
+    Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
 </aside>
 
 <aside class="notice">
-Replace <code>USERNAME</code> and <code>PASSWORD</code> with the one entered by the user
+    Replace <code>USERNAME</code> and <code>PASSWORD</code> with the one entered by the user
 </aside>
 
           <h1 id="third-party-api">Third Party API</h1>
