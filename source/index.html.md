@@ -16,6 +16,7 @@ includes:
   - integration
   - product
   - mobile
+  - registeration
   - shop
   - order
   - tax

@@ -70,6 +70,8 @@ Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section
 
 Plese refer to RFC6749 [Section-4.1](https://tools.ietf.org/html/rfc6749#section-4.3)
 
+`access_token` is long lived.
+
 **AVANA** expects for the access_token to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization : Bearer access_token`

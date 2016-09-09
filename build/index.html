@@ -230,6 +230,8 @@
 
 <p>Plese refer to RFC6749 <a href="https://tools.ietf.org/html/rfc6749#section-4.3">Section-4.1</a></p>
 
+<p><code class="prettyprint">access_token</code> is long lived.</p>
+
 <p><strong>AVANA</strong> expects for the access_token to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code class="prettyprint">Authorization : Bearer access_token</code></p>
@@ -398,6 +400,140 @@ You must replace <code>access_token</code> with your access token recieved upon 
 <h2 id="edit-product">Edit Product</h2>
 
           <h1 id="mobile-api">Mobile API</h1>
+
+          <h1 id="registeration">Registeration</h1>
+
+<h2 id="email">Email</h2>
+<pre class="highlight shell"><code>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">//to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/oauth/register</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">POST</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/x-www-form-urlencoded</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p><code class="prettyprint">email</code> =&gt; email,
+<code class="prettyprint">password</code> =&gt; password,
+<code class="prettyprint">client_id</code> =&gt; <code class="prettyprint">CLIENT_ID</code>,
+<code class="prettyprint">client_secret</code> =&gt; <code class="prettyprint">CLIENT_SECRET</code>,
+<code class="prettyprint">grant_type</code> =&gt; <code class="prettyprint">register</code></p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<p><em>to be added</em></p>
+
+<aside class="notice">
+    Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
+</aside>
+
+<h2 id="facebook">Facebook</h2>
+<pre class="highlight shell"><code>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">//to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/facebook/signon</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">POST</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/x-www-form-urlencoded</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">access_token</code></td>
+<td>facebook access_token</td>
+</tr>
+<tr>
+<td><code class="prettyprint">client_id</code></td>
+<td><code class="prettyprint">CLIENT_ID</code>,</td>
+</tr>
+<tr>
+<td><code class="prettyprint">client_secret</code></td>
+<td><code class="prettyprint">CLIENT_SECRET</code>,</td>
+</tr>
+<tr>
+<td><code class="prettyprint">grant_type</code></td>
+<td><code class="prettyprint">facebook</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="possible-error">Possible error</h3>
+
+<p><em>to be added</em></p>
+
+<aside class="notice">
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<aside class="notice">
+    Replace <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> with the one that you recieved while registering for an app
+</aside>
 
           <h1 id="shop">Shop</h1>
 
