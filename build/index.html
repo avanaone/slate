@@ -2542,19 +2542,69 @@ You must replace <code>access_token</code> with your access token recieved upon 
 
 <h3 id="request-parameter">Request Parameter</h3>
 
-<p>Name | Value | Required
-&mdash; | &mdash;
-<code class="prettyprint">name</code> | Product name | <code class="prettyprint">Yes</code>
-<code class="prettyprint">description</code> | Product description | <code class="prettyprint">No</code>
-<code class="prettyprint">price</code> | Product price | <code class="prettyprint">Yes</code>
-<code class="prettyprint">category</code> | Category ID | <code class="prettyprint">Yes</code>
-<code class="prettyprint">tax</code> | Tax ID | <code class="prettyprint">Yes</code>
-<code class="prettyprint">weight</code> | Weight in KG | <code class="prettyprint">Yes</code>
-<code class="prettyprint">quantity</code> | Product quamtity | <code class="prettyprint">Yes</code> without <code class="prettyprint">variation</code>
-<code class="prettyprint">sale</code> | Is product on sale?( 1 or 0) | <code class="prettyprint">No</code>
-<code class="prettyprint">sale_price</code> | The price of product if its on sale | <code class="prettyprint">Yes</code> if <code class="prettyprint">sale</code> is true 
-<code class="prettyprint">estimated_delivery_time</code> | Estimated delivery time | <code class="prettyprint">Yes</code> if <code class="prettyprint">global_estimated_delivery_time</code> is not specified
-<code class="prettyprint">global_estimated_delivery_time</code> | User global estimated delivery time (1 or 0) | <code class="prettyprint">Yes</code> if <code class="prettyprint">estimated_delivery_time</code> is not specified</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>Product name</td>
+<td><code class="prettyprint">Yes</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">description</code></td>
+<td>Product description</td>
+<td><code class="prettyprint">No</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">price</code></td>
+<td>Product price</td>
+<td><code class="prettyprint">Yes</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">category</code></td>
+<td>Category ID</td>
+<td><code class="prettyprint">Yes</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">tax</code></td>
+<td>Tax ID</td>
+<td><code class="prettyprint">Yes</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">weight</code></td>
+<td>Weight in KG</td>
+<td><code class="prettyprint">Yes</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">quantity</code></td>
+<td>Product quamtity</td>
+<td><code class="prettyprint">Yes</code> without <code class="prettyprint">variation</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">sale</code></td>
+<td>Is product on sale?( 1 or 0)</td>
+<td><code class="prettyprint">No</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">sale_price</code></td>
+<td>The price of product if its on sale</td>
+<td><code class="prettyprint">Yes</code> if <code class="prettyprint">sale</code> is true</td>
+</tr>
+<tr>
+<td><code class="prettyprint">estimated_delivery_time</code></td>
+<td>Estimated delivery time</td>
+<td><code class="prettyprint">Yes</code> if <code class="prettyprint">global_estimated_delivery_time</code> is not specified</td>
+</tr>
+<tr>
+<td><code class="prettyprint">global_estimated_delivery_time</code></td>
+<td>User global estimated delivery time (1 or 0)</td>
+<td><code class="prettyprint">Yes</code> if <code class="prettyprint">estimated_delivery_time</code> is not specified</td>
+</tr>
+</tbody></table>
 
 <h3 id="possible-error">Possible error</h3>
 

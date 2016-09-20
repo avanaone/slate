@@ -45,7 +45,7 @@ Name | Value
 
 ### Request Parameter
 Name | Value | Required
---- | ---
+--- | --- | ---
 `name` | Product name | `Yes`
 `description` | Product description | `No`
 `price` | Product price | `Yes`
