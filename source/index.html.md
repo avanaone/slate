@@ -22,6 +22,7 @@ includes:
   - tax
   - label
   - category
+  - variation
   - product
 
 search: true
