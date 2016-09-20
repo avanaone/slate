@@ -1,4 +1,158 @@
 # Product
+## Product List
+
+> To get the product list for a shop, use the following:
+
+```shell
+curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/{shop_id}/product"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+
+> A successful response will look like the following
+
+```json
+{
+  "data": [
+    {
+      "id": 397,
+      "name": "Product name",
+      "description": "Product description",
+      "model": "Product model",
+      "quantity": 12,
+      "price": 120,
+      "sale": false,
+      "sale_price": 0,
+      "weight": 1,
+      "estimated_delivery_time": "",
+      "estimated_delivery_time_shopbased": true,
+      "category": {
+        "id": 104,
+        "name": "Product Category"
+      },
+      "tax": {
+        "id": 30,
+        "name": "GST",
+        "value": "6.0000"
+      }
+    }
+  ]
+}
+```
+
+Retrive the product list for a shop
+
+### End point
+`https://apis.avana.asia/v1/mobile/{shop_id}/product`
+
+### Request Method
+`GET`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+none
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+## Product Info
+
+> To get a product info, use the following:
+
+```shell
+curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/product/{product_id}"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+
+> A successful response will look like the following
+
+```json
+{
+  "data": {
+    "id": 397,
+    "name": "Product name",
+    "description": "Product description",
+    "model": "Product model",
+    "quantity": 12,
+    "price": 120,
+    "sale": false,
+    "sale_price": 0,
+    "weight": 1,
+    "estimated_delivery_time": "",
+    "estimated_delivery_time_shopbased": true,
+    "category": {
+      "id": 104,
+      "name": "Product Category"
+    },
+    "tax": {
+      "id": 30,
+      "name": "GST",
+      "value": "6.0000"
+    }
+  }
+}
+```
+
+Retrive info for a product
+
+### End point
+`https://apis.avana.asia/v1/mobile/product/{product_id}`
+
+### Request Method
+`GET`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+none
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+404 | Product not found | No product found for the specified product_id 
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+
 ## Create Product
 
 > To create a category, use the following:
