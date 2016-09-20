@@ -14,7 +14,7 @@ includes:
   - introduction
   - authentication
   - integration
-  - product
+  - thirdpartyproduct
   - mobile
   - registeration
   - shop
@@ -22,6 +22,7 @@ includes:
   - tax
   - label
   - category
+  - product
 
 search: true
 ---

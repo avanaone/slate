@@ -1,41 +1,12 @@
 # Product
-## Add Product
+## Create Product
 
-> To add product, use the following:
+> To create a category, use the following:
 
 ```shell
-curl -X POST -H "Avana-Secure-Key: secure_key" -H "Content-Type: application/json" -H "Accept: application/json" -H "Authorization: Bearer access_token"
--d '{
-    "name": "Product name",
-    "model": "Product model",
-    "category": "Product Category",
-    "option": {
-        "name": "Size",
-        "for": "Shirt",
-        "variation" : ["s","m","l"],
-        "quantity": {
-            "s" : 10,
-            "m" : 10,
-            "l" : 10
-        }
-    },
-    "quantity": 10,
-    "price": 12,
-    "description": "Product description",
-    "weight":{
-        "value" : 1,
-        "unit": "kg"
-    },
-    "primary_image": "http://example.org/images/image_1.png",
-    "images": ["http://example.org/images/image_2.png"],
-    "EDT": "1-2 Days",
-    "label" : ["label_1", "label_2", "label_3"],
-    "tax" : {
-        "value": 6,
-        "name": "GST"
-    },
-    "published": true
-}' "https://apis.avana.asia/v1/vendor/product"
+curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/{shop_id}/product"
 ```
 
 ```javascript
@@ -46,27 +17,53 @@ curl -X POST -H "Avana-Secure-Key: secure_key" -H "Content-Type: application/jso
 <?php
 //to be added
 ```
+
 > A successful response will look like the following
 
 ```json
 {
-  "data": [
-    {
-      "product_id": 1
+  "data":{
+      "id": 1,
     }
-  ]
 }
 ```
 
-> A failed response will look like the following
+Create a product for a shop
 
-```json
-{
-  "error": {
-    "message": "Adding product failed",
-    "code": 500
-  }
-}
-```
+### End point
+`https://apis.avana.asia/v1/mobile/{shop_id}/product`
 
-## Edit Product
+### Request Method
+`POST`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+Name | Value | Required
+--- | ---
+`name` | Product name | `Yes`
+`description` | Product description | `No`
+`price` | Product price | `Yes`
+`category` | Category ID | `Yes`
+`tax` | Tax ID | `Yes`
+`weight` | Weight in KG | `Yes`
+`quantity` | Product quamtity | `Yes` without `variation`
+`sale` | Is product on sale?( 1 or 0) | `No`
+`sale_price` | The price of product if its on sale | `Yes` if `sale` is true 
+`estimated_delivery_time` | Estimated delivery time | `Yes` if `global_estimated_delivery_time` is not specified
+`global_estimated_delivery_time` | User global estimated delivery time (1 or 0) | `Yes` if `estimated_delivery_time` is not specified
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+422 | Validation error | If there is any validation error
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>

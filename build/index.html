@@ -760,7 +760,7 @@ You must replace <code>access_token</code> with your access token recieved upon 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Retrive the information of a shop</p>
+<p>Create a shop</p>
 
 <h3 id="end-point">End point</h3>
 
@@ -2474,6 +2474,106 @@ You must replace <code>access_token</code> with your access token recieved upon 
 <td>404</td>
 <td>Category not found</td>
 <td>No category found for the specified category_id</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+          <h1 id="product">Product</h1>
+
+<h2 id="create-product">Create Product</h2>
+
+<blockquote>
+<p>To create a category, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/{shop_id}/product"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Create a product for a shop</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/{shop_id}/product</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">POST</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<p>Name | Value | Required
+&mdash; | &mdash;
+<code class="prettyprint">name</code> | Product name | <code class="prettyprint">Yes</code>
+<code class="prettyprint">description</code> | Product description | <code class="prettyprint">No</code>
+<code class="prettyprint">price</code> | Product price | <code class="prettyprint">Yes</code>
+<code class="prettyprint">category</code> | Category ID | <code class="prettyprint">Yes</code>
+<code class="prettyprint">tax</code> | Tax ID | <code class="prettyprint">Yes</code>
+<code class="prettyprint">weight</code> | Weight in KG | <code class="prettyprint">Yes</code>
+<code class="prettyprint">quantity</code> | Product quamtity | <code class="prettyprint">Yes</code> without <code class="prettyprint">variation</code>
+<code class="prettyprint">sale</code> | Is product on sale?( 1 or 0) | <code class="prettyprint">No</code>
+<code class="prettyprint">sale_price</code> | The price of product if its on sale | <code class="prettyprint">Yes</code> if <code class="prettyprint">sale</code> is true 
+<code class="prettyprint">estimated_delivery_time</code> | Estimated delivery time | <code class="prettyprint">Yes</code> if <code class="prettyprint">global_estimated_delivery_time</code> is not specified
+<code class="prettyprint">global_estimated_delivery_time</code> | User global estimated delivery time (1 or 0) | <code class="prettyprint">Yes</code> if <code class="prettyprint">estimated_delivery_time</code> is not specified</p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+<tr>
+<td>422</td>
+<td>Validation error</td>
+<td>If there is any validation error</td>
 </tr>
 </tbody></table>
 

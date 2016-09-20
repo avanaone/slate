@@ -164,7 +164,7 @@ curl -X POST -H "Authorization: Bearer access_token"\
 }
 ```
 
-Retrive the information of a shop
+Create a shop
 
 ### End point
 `https://apis.avana.asia/v1/mobile/shop`
