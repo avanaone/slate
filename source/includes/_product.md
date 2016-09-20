@@ -23,7 +23,7 @@ curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
 ```json
 {
   "data":{
-      "id": 1,
+      "id": 1
     }
 }
 ```
