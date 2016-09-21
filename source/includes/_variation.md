@@ -286,3 +286,144 @@ Code | Error Message | Explanation
 <aside class="notice">
 You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
+
+## Update Variation
+
+> To update a variation, use the following:
+
+```shell
+curl -X PATCH -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/variation/{variation_id}"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+
+> A successful response will look like the following
+
+```json
+{
+  "data": {
+    "id": 62,
+    "name": "Color",
+    "for": "Shirt",
+    "variation": [
+      {
+        "id": 234,
+        "name": "white"
+      },
+      {
+        "id": 233,
+        "name": "green"
+      },
+      {
+        "id": 232,
+        "name": "black"
+      },
+      {
+        "id": 231,
+        "name": "red"
+      }
+    ]
+  }
+}
+```
+
+Update info for a variation
+
+### End point
+`https://apis.avana.asia/v1/mobile/variation/{variation_id}`
+
+### Request Method
+`PATCH`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+Name | Value
+--- | ---
+`name` | name. Ex: Color
+`for` | for. Ex: Shirt
+`variation` | comma seperated value. Ex: s,m,l,xl,xxl
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+400 | The selected variation already in use, updating not possible | variation_id already in use, no updating is possible
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+403 | Forbidden | variation_id does not belong to current user 
+500 | Input cannot be empty, accepted input: {valid_inputs} | Request cannot be empty, needs atleast one input
+500 | Invalid input({invalid_inputs}), accepted input: {valid_inputs} | Request needs a valid input
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+## Delete Category
+
+> To delete a variation, use the following:
+
+```shell
+curl -X DELETE -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/variation/{variation_id}"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+> A successful response will look like the following
+
+```json
+{
+  "data": {
+      "delete": true
+    }
+}
+```
+
+Delete a variation
+
+### End point
+`https://apis.avana.asia/v1/mobile/variation/{variation_id}`
+
+### Request Method
+`DELETE`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+none
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+400 | The selected variation already in use, deleting not possible | variation_id already in use, no deleting is possible
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+404 | Variation not found | No variation found for the specified variation_id 
+
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
