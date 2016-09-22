@@ -320,6 +320,8 @@ Code | Error Message | Explanation
 --- | --- | ---
 401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
 422 | Validation error | If there is any validation error
+422 | Variant values not complete | Variant values not complete, missing or exceed the required value 
+422 | Variants data does not match the variant_id | The `varaint value id` does not belong to `varaint_id`
 
 <aside class="notice">
 You must replace <code>access_token</code> with your access token recieved upon authorization.
