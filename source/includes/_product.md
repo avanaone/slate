@@ -18,7 +18,7 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
 //to be added
 ```
 
-> A successful response will look like the following
+> A successful response will look like the following for product without variant
 
 ```json
 {
@@ -44,6 +44,53 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
         "name": "GST",
         "value": "6.0000"
       }
+    }
+  ]
+}
+```
+
+> A successful response will look like the following for product with variant
+
+```json
+{
+  "data": [
+    {
+      "id": 397,
+      "name": "Product name",
+      "description": "Product description",
+      "model": "Product model",
+      "price": 120,
+      "sale": false,
+      "sale_price": 0,
+      "weight": 1,
+      "estimated_delivery_time": "",
+      "estimated_delivery_time_shopbased": true,
+      "category": {
+        "id": 104,
+        "name": "Product Category"
+      },
+      "tax": {
+        "id": 30,
+        "name": "GST",
+        "value": "6.0000"
+      },
+      "variant": [
+        {
+          "id": 1,
+          "name": "s",
+          "quantity": 14
+        },
+        {
+          "id": 2,
+          "name": "m",
+          "quantity": 14
+        },
+        {
+          "id": 3,
+          "name": "l",
+          "quantity": 14
+        }
+      ]
     }
   ]
 }
@@ -95,7 +142,7 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
 //to be added
 ```
 
-> A successful response will look like the following
+> A successful response will look like the following for product without variant
 
 ```json
 {
@@ -121,6 +168,51 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
       "value": "6.0000"
     }
   }
+}
+```
+
+> A successful response will look like the following for product with variant
+
+```json
+{
+  "data": {
+      "id": 397,
+      "name": "Product name",
+      "description": "Product description",
+      "model": "Product model",
+      "price": 120,
+      "sale": false,
+      "sale_price": 0,
+      "weight": 1,
+      "estimated_delivery_time": "",
+      "estimated_delivery_time_shopbased": true,
+      "category": {
+        "id": 104,
+        "name": "Product Category"
+      },
+      "tax": {
+        "id": 30,
+        "name": "GST",
+        "value": "6.0000"
+      },
+      "variant": [
+        {
+          "id": 1,
+          "name": "s",
+          "quantity": 14
+        },
+        {
+          "id": 2,
+          "name": "m",
+          "quantity": 14
+        },
+        {
+          "id": 3,
+          "name": "l",
+          "quantity": 14
+        }
+      ]
+    }
 }
 ```
 
@@ -211,6 +303,17 @@ Name | Value | Required
 `sale_price` | The price of product if its on sale | `Yes` if `sale` is true 
 `estimated_delivery_time` | Estimated delivery time | `Yes` if `global_estimated_delivery_time` is not specified
 `global_estimated_delivery_time` | User global estimated delivery time (1 or 0) | `Yes` if `estimated_delivery_time` is not specified
+`variation_id` | The variant_id | `Yes` without `quantity`
+`variation_value` | The variant values(json object, `{ id:quantity}`). | `Yes` without `quantity` and with `variation_id`
+
+#### `variation_value` example
+
+Consider the following [variation](#varation-info)
+
+`variation_value` value should look like the following:
+
+`variation_value: { 234: 5, 233:5, 232:5, 231: 5}`
+
 
 ### Possible error
 Code | Error Message | Explanation
