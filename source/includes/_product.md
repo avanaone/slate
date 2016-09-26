@@ -326,3 +326,66 @@ Code | Error Message | Explanation
 <aside class="notice">
 You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
+
+
+## Product Image
+
+> To add a image to a product, use the following:
+
+```shell
+curl -X POST -H "Authorization: Bearer access_token" -F "image=@image.jpg"\
+"http://apis.avana.asia/v1/mobile/product/{product_id}}/image"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+
+> A successful response will look like the following for product without variant
+
+```json
+{
+  "data": {
+    "upload": true,
+    "path": "https://apis.avana.asia/uploads/96ccf48e-c64f-598d-bb01-fd724e11dd27.png"
+  }
+}
+```
+
+Add image to a product. One product can have a maximum of 4 images. This is a **multipart form request**
+
+### End point
+`http://apis.avana.asia/v1/mobile/product/{product_id}}/image`
+
+### Request Method
+`POST` 
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Accept` | `application/json`
+
+### Request Parameter
+Name | Value
+--- | ---
+`image` |  the image file
+`primary` | `1` or `0` . Set image as primary
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+403 | Forbidden | 403 | Forbidden | product_id does not belong to current user
+404 | Product not found | No product found for the specified product_id 
+422 | Validation Error | Validation error
+422 | Minimum image width must be {width}px' | Minimum image width not met
+500 | Image limit reached for this product | Image limit reached for this product
+<aside class="notice">
+You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
