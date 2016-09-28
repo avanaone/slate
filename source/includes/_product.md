@@ -23,28 +23,35 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
 ```json
 {
   "data": [
-    {
-      "id": 397,
-      "name": "Product name",
-      "description": "Product description",
-      "model": "Product model",
-      "quantity": 12,
-      "price": 120,
-      "sale": false,
-      "sale_price": 0,
-      "weight": 1,
-      "estimated_delivery_time": "",
-      "estimated_delivery_time_shopbased": true,
-      "category": {
-        "id": 104,
-        "name": "Product Category"
-      },
-      "tax": {
-        "id": 30,
-        "name": "GST",
-        "value": "6.0000"
-      }
+  {
+    "id": 397,
+    "name": "Product name",
+    "description": "Product description",
+    "model": "Product model",
+    "quantity": 12,
+    "price": 120,
+    "sale": false,
+    "sale_price": 0,
+    "weight": 1,
+    "estimated_delivery_time": "",
+    "estimated_delivery_time_shopbased": true,
+    "category": {
+      "id": 104,
+      "name": "Product Category"
+    },
+    "tax": {
+      "id": 30,
+      "name": "GST",
+      "value": "6.0000"
+    },
+    "image": {
+      "primary": "https://apis.avana.asia/uploads/1c9f4bdf-0c18-5552-b176-5550c3e2d3c2.png",
+      "list": [
+      "https://apis.avana.asia/uploads/a88d78cf-347d-59dd-8423-469c3f5e1961.png",
+      "https://apis.avana.asia/uploads/248bcc9c-5064-57b3-ab74-51de88a7735e.png"
+      ]
     }
+  }
   ]
 }
 ```
@@ -54,49 +61,57 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
 ```json
 {
   "data": [
-    {
-      "id": 397,
-      "name": "Product name",
-      "description": "Product description",
-      "model": "Product model",
-      "price": 120,
-      "sale": false,
-      "sale_price": 0,
-      "weight": 1,
-      "estimated_delivery_time": "",
-      "estimated_delivery_time_shopbased": true,
-      "category": {
-        "id": 104,
-        "name": "Product Category"
-      },
-      "tax": {
-        "id": 30,
-        "name": "GST",
-        "value": "6.0000"
-      },
-      "variant": [
-        {
-          "id": 1,
-          "name": "s",
-          "quantity": 14
-        },
-        {
-          "id": 2,
-          "name": "m",
-          "quantity": 14
-        },
-        {
-          "id": 3,
-          "name": "l",
-          "quantity": 14
-        }
+  {
+    "id": 397,
+    "name": "Product name",
+    "description": "Product description",
+    "model": "Product model",
+    "price": 120,
+    "sale": false,
+    "sale_price": 0,
+    "weight": 1,
+    "estimated_delivery_time": "",
+    "estimated_delivery_time_shopbased": true,
+    "category": {
+      "id": 104,
+      "name": "Product Category"
+    },
+    "tax": {
+      "id": 30,
+      "name": "GST",
+      "value": "6.0000"
+    },
+    ,
+    "image": {
+      "primary": "https://apis.avana.asia/uploads/1c9f4bdf-0c18-5552-b176-5550c3e2d3c2.png",
+      "list": [
+        "https://apis.avana.asia/uploads/a88d78cf-347d-59dd-8423-469c3f5e1961.png",
+        "https://apis.avana.asia/uploads/248bcc9c-5064-57b3-ab74-51de88a7735e.png"
       ]
+    },
+    "variant": [
+    {
+      "id": 1,
+      "name": "s",
+      "quantity": 14
+    },
+    {
+      "id": 2,
+      "name": "m",
+      "quantity": 14
+    },
+    {
+      "id": 3,
+      "name": "l",
+      "quantity": 14
     }
+    ]
+  }
   ]
 }
 ```
 
-Retrive the product list for a shop
+Retrive the product list for a shop. **For product without image, `image` key will not exist**, do your checking accordingly.
 
 ### End point
 `https://apis.avana.asia/v1/mobile/{shop_id}/product`
@@ -120,7 +135,7 @@ Code | Error Message | Explanation
 401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
 
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+  You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
 ## Product Info
@@ -176,43 +191,43 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
 ```json
 {
   "data": {
-      "id": 397,
-      "name": "Product name",
-      "description": "Product description",
-      "model": "Product model",
-      "price": 120,
-      "sale": false,
-      "sale_price": 0,
-      "weight": 1,
-      "estimated_delivery_time": "",
-      "estimated_delivery_time_shopbased": true,
-      "category": {
-        "id": 104,
-        "name": "Product Category"
-      },
-      "tax": {
-        "id": 30,
-        "name": "GST",
-        "value": "6.0000"
-      },
-      "variant": [
-        {
-          "id": 1,
-          "name": "s",
-          "quantity": 14
-        },
-        {
-          "id": 2,
-          "name": "m",
-          "quantity": 14
-        },
-        {
-          "id": 3,
-          "name": "l",
-          "quantity": 14
-        }
-      ]
+    "id": 397,
+    "name": "Product name",
+    "description": "Product description",
+    "model": "Product model",
+    "price": 120,
+    "sale": false,
+    "sale_price": 0,
+    "weight": 1,
+    "estimated_delivery_time": "",
+    "estimated_delivery_time_shopbased": true,
+    "category": {
+      "id": 104,
+      "name": "Product Category"
+    },
+    "tax": {
+      "id": 30,
+      "name": "GST",
+      "value": "6.0000"
+    },
+    "variant": [
+    {
+      "id": 1,
+      "name": "s",
+      "quantity": 14
+    },
+    {
+      "id": 2,
+      "name": "m",
+      "quantity": 14
+    },
+    {
+      "id": 3,
+      "name": "l",
+      "quantity": 14
     }
+    ]
+  }
 }
 ```
 
@@ -241,7 +256,7 @@ Code | Error Message | Explanation
 404 | Product not found | No product found for the specified product_id 
 
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+  You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
 
@@ -269,8 +284,8 @@ curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
 ```json
 {
   "data":{
-      "id": 1
-    }
+    "id": 1
+  }
 }
 ```
 
@@ -324,7 +339,7 @@ Code | Error Message | Explanation
 422 | Variants data does not match the variant_id | The `varaint value id` does not belong to `varaint_id`
 
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+  You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
 
 
@@ -387,5 +402,62 @@ Code | Error Message | Explanation
 422 | Minimum image width must be {width}px' | Minimum image width not met
 500 | Image limit reached for this product | Image limit reached for this product
 <aside class="notice">
-You must replace <code>access_token</code> with your access token recieved upon authorization.
+  You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+## Delete Product
+
+> To delete a product, use the following:
+
+```shell
+curl -X DELETE -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/product/{product_id}"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+> A successful response will look like the following
+
+```json
+{
+  "data": {
+      "delete": true
+  }
+}
+```
+
+Delete a label
+
+### End point
+`https://apis.avana.asia/v1/mobile/product/{product_id}`
+
+### Request Method
+`DELETE`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+none
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+403 | Forbidden | product_id does not belong to current user 
+404 | Product not found | No product found for the specified product_id 
+
+<aside class="notice">
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
 </aside>
