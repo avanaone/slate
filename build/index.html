@@ -3740,7 +3740,7 @@ You must replace <code>access_token</code> with your access token recieved upon 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Delete a label</p>
+<p>Delete a product</p>
 
 <h3 id="end-point">End point</h3>
 
@@ -3799,6 +3799,97 @@ You must replace <code>access_token</code> with your access token recieved upon 
 <td>404</td>
 <td>Product not found</td>
 <td>No product found for the specified product_id</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+<h2 id="delete-image">Delete Image</h2>
+
+<blockquote>
+<p>To delete a image, use the following:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Accept: application/json"</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Bearer access_token"</span><span class="se">\</span>
+<span class="s2">"https://apis.avana.asia/v1/mobile/image/{image_id}"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// to be added</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//to be added
+</span></code></pre>
+
+<blockquote>
+<p>A successful response will look like the following</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Delete a image</p>
+
+<h3 id="end-point">End point</h3>
+
+<p><code class="prettyprint">https://apis.avana.asia/v1/mobile/image/{image_id}</code></p>
+
+<h3 id="request-method">Request Method</h3>
+
+<p><code class="prettyprint">DELETE</code></p>
+
+<h3 id="request-header">Request Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Authorization</code></td>
+<td><code class="prettyprint">Bearer access_token</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Content-Type</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">Accept</code></td>
+<td><code class="prettyprint">application/json</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="request-parameter">Request Parameter</h3>
+
+<p>none</p>
+
+<h3 id="possible-error">Possible error</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error Message</th>
+<th>Explanation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Please login to continue</td>
+<td>There is no user authenticated for the supplied <code class="prettyprint">access_token</code></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>image_id does not belong to current user</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Image not found</td>
+<td>No image found for the specified image_id</td>
 </tr>
 </tbody></table>
 

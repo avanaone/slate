@@ -445,7 +445,7 @@ curl -X DELETE -H "Content-Type: application/json" -H "Accept: application/json"
 }
 ```
 
-Delete a label
+Delete a product
 
 ### End point
 `https://apis.avana.asia/v1/mobile/product/{product_id}`
@@ -469,6 +469,63 @@ Code | Error Message | Explanation
 401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
 403 | Forbidden | product_id does not belong to current user 
 404 | Product not found | No product found for the specified product_id 
+
+<aside class="notice">
+    You must replace <code>access_token</code> with your access token recieved upon authorization.
+</aside>
+
+## Delete Image
+
+> To delete a image, use the following:
+
+```shell
+curl -X DELETE -H "Content-Type: application/json" -H "Accept: application/json"\
+-H "Authorization: Bearer access_token"\
+"https://apis.avana.asia/v1/mobile/image/{image_id}"
+```
+
+```javascript
+// to be added
+```
+
+```php
+<?php
+//to be added
+```
+> A successful response will look like the following
+
+```json
+{
+  "data": {
+      "delete": true
+  }
+}
+```
+
+Delete a image
+
+### End point
+`https://apis.avana.asia/v1/mobile/image/{image_id}`
+
+### Request Method
+`DELETE`
+
+### Request Header
+Name | Value
+--- | ---
+`Authorization` | `Bearer access_token`
+`Content-Type` | `application/json`
+`Accept` | `application/json`
+
+### Request Parameter
+none
+
+### Possible error
+Code | Error Message | Explanation
+--- | --- | ---
+401 | Please login to continue | There is no user authenticated for the supplied `access_token` 
+403 | Forbidden | image_id does not belong to current user 
+404 | Image not found | No image found for the specified image_id 
 
 <aside class="notice">
     You must replace <code>access_token</code> with your access token recieved upon authorization.
