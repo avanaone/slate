@@ -45,10 +45,16 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
       "value": "6.0000"
     },
     "image": {
-      "primary": "https://apis.avana.asia/uploads/1c9f4bdf-0c18-5552-b176-5550c3e2d3c2.png",
-      "list": [
-      "https://apis.avana.asia/uploads/a88d78cf-347d-59dd-8423-469c3f5e1961.png",
-      "https://apis.avana.asia/uploads/248bcc9c-5064-57b3-ab74-51de88a7735e.png"
+      "primary": 401,
+      "items": [
+        {
+          "id": 400,
+          "path": "https://apis.avana.asia/uploads/0474194d-387a-57ab-b67d-ba3109a1d8f7.png"
+        },
+        {
+          "id": 401,
+          "path": "https://apis.avana.asia/uploads/23a4d39c-8294-5cd6-8cf5-bcaaa23d0335.png"
+        }
       ]
     }
   }
@@ -83,10 +89,16 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
     },
     ,
     "image": {
-      "primary": "https://apis.avana.asia/uploads/1c9f4bdf-0c18-5552-b176-5550c3e2d3c2.png",
-      "list": [
-        "https://apis.avana.asia/uploads/a88d78cf-347d-59dd-8423-469c3f5e1961.png",
-        "https://apis.avana.asia/uploads/248bcc9c-5064-57b3-ab74-51de88a7735e.png"
+      "primary": 401,
+      "items": [
+        {
+          "id": 400,
+          "path": "https://apis.avana.asia/uploads/0474194d-387a-57ab-b67d-ba3109a1d8f7.png"
+        },
+        {
+          "id": 401,
+          "path": "https://apis.avana.asia/uploads/23a4d39c-8294-5cd6-8cf5-bcaaa23d0335.png"
+        }
       ]
     },
     "variant": [
