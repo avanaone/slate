@@ -33,7 +33,7 @@ curl -X GET -H "Content-Type: application/json" -H "Accept: application/json"\
       },
       "address": {
         "country": "Malaysia",
-        "state": "Perak,
+        "state": "Perak",
         "post_code": "31900"
       },
       "reporting": {
@@ -122,7 +122,7 @@ curl -X PATCH -H "Content-Type: application/json" -H "Accept: application/json"\
       },
       "address": {
         "country": "Malaysia",
-        "state": "Perak,
+        "state": "Perak",
         "post_code": "31900"
       },
       "reporting": {
@@ -229,7 +229,7 @@ curl -X POST -H "Authorization: Bearer access_token" -F "image=@image.png"\
       },
       "address": {
         "country": "Malaysia",
-        "state": "Perak,
+        "state": "Perak",
         "post_code": "31900"
       },
       "reporting": {
