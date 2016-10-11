@@ -24,6 +24,7 @@ includes:
   - category
   - variation
   - product
+  - setting
 
 search: true
 ---
