@@ -274,7 +274,7 @@ Code | Error Message | Explanation
 
 ## Create Product
 
-> To create a category, use the following:
+> To create a product, use the following:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
@@ -356,7 +356,7 @@ Code | Error Message | Explanation
 
 ## Update Product
 
-> To create a category, use the following:
+> To update a product, use the following:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
