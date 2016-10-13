@@ -359,7 +359,7 @@ Code | Error Message | Explanation
 > To update a product, use the following:
 
 ```shell
-curl -X POST -H "Content-Type: application/json" -H "Accept: application/json"\
+curl -X PATCH -H "Content-Type: application/json" -H "Accept: application/json"\
 -H "Authorization: Bearer access_token"\
 "https://apis.avana.asia/v1/mobile/product/{product_id}"
 ```
